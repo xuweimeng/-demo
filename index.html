@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>钱保姆产品战略升级</title>
+<link rel="stylesheet" href="css/swiper.min.css">
+<link rel="stylesheet" href="css/sample.css">
+<script type="text/javascript">
+	/**************获取html节点，设置rem值，添加<meta>标签****************/ 
+    var dpr=window.devicePixelRatio;
+    var scale=1/dpr;
+    document.write('<meta name="viewport" content="initial-scale='+scale+',minimum-scale='+scale+',maximum-scale='+scale+',user-scalable=no">');
+     var fontSize = document.documentElement.clientWidth/10;
+     var oHtml = document.getElementsByTagName('html')[0];
+     oHtml.style.fontSize=fontSize+'px';
+</script>
+</head>
+<body>
+<!-- header -->
+<div class="page-header">
+	<h2>钱保姆产品战略升级</h2>
+</div>
+<!-- content -->
+<div class="content">
+	<img class="allWidth" src="image/page1.png">
+</div>
+<!-- content2 -->
+<div class="content2">
+	<div class="content-shangxian">
+	    <h2>诚意之作重磅上线</h2>
+	    <div class="swiper-container swip1">
+		  <div class="swiper-wrapper">
+		    <div class="swiper-slide"><img src="image/ff.png"></div>
+		    <div class="swiper-slide" ><img src="image/aa.png"></div>
+		    <div class="swiper-slide"><img src="image/xx.png"></div>
+		  </div>
+		</div>
+	</div>
+	<div class="content-zizhi">
+	    <h2><span>资产优质</span><span class="suojin">风控严密</span> </h2>
+	    <div class="title">
+	    	<div class="shows">
+	    		<div class="gongyinglian fl">
+		    		<img  src="image/gong-long.png" >
+		    	</div>
+		    	<div class="chedai cc fr">
+		    		<img  src="image/chedai-short.png" >
+		    	</div>
+	    	</div>
+	    	<div class="hides">
+	    		<div class="gongyinglian fr">
+		    		<img  src="image/che-long.png" >
+		    	</div>
+		    	<div class="chedai bb fl">
+		    		<img  src="image/gong-short.png" >
+		    	</div>
+	    	</div>
+		</div>
+	    <div class="swiper-container swip2">
+		    <div class="swiper-wrapper">
+			    <div class="swiper-slide">
+			    	<img src="image/gong-content.png" >
+			    </div>
+			    <div class="swiper-slide">
+			    	<img src="image/gongyinglian2.png" >
+			    </div>
+			</div>
+			<!-- 分页 -->
+   	 		<div class="swiper-pagination"></div>
+		</div>
+	</div>
+</div>
+
+<script src="js/swiper.min.js"></script>
+<script src="js/zepto.js"></script>
+<script type="text/javascript">
+/****设置第一个swiper*****/ 
+  var mySwiper = new Swiper('.swip1',{
+    loop: false,//loop是否循环
+	roundLengths : true,//参数取整
+	initialSlide :1,//默认显示第二个banner
+	slidesPerView:'auto',//自动居中
+	centeredSlides : true,
+  });
+  /****设置第一个swiper*****/ 
+  var mySwiper2 = new Swiper('.swip2',{
+    loop: false,
+    initialSlide :0,
+	pagination: '.swiper-pagination',
+  });
+  /*点击按钮，销毁页面已存在的sliders，再次点击按钮，重新加载按钮*/ 
+  $('.cc').click(function(){
+  	$('.shows').hide();
+    $('.hides').show();
+    mySwiper2.removeAllSlides();
+  	mySwiper2.appendSlide(['<div class="swiper-slide"><img src="image/chedai2.png" alt=""></div><div class="swiper-slide"><img src="image/che-content.png" alt=""></div>'])
+  })
+  $('.bb').click(function(){
+  	$('.shows').show();
+    $('.hides').hide();
+    mySwiper2.removeAllSlides();
+  	mySwiper2.appendSlide(['<div class="swiper-slide"><img src="image/gong-content.png" alt=""></div><div class="swiper-slide"><img src="image/gongyinglian2.png" alt=""></div>'])
+  })
+</script>
+</body>
+</html>
